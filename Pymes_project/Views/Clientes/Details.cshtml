@@ -1,0 +1,66 @@
+﻿@model Pymes_project.Models.Clientes
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles del cliente</h2>
+<style>
+    dl {
+        background-color: white;
+        border-radius: 15px;
+    }
+</style>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ciudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ciudad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idnit },
+    new { @class = "btn btn-success" }) |
+    @Html.ActionLink("Volver", "Index", new { }, new { @class = "btn btn-info" })
+
+</p>

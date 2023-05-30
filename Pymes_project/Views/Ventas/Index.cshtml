@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Pymes_project.Models.Venta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listado de ventas</h2>
+<style>
+    .table {
+        background-color: white;
+        border-radius: 15px;
+    }
+</style>
+<p>
+    @Html.ActionLink("Nuevo registro", "Create", new { },
+    new { @class = "btn btn-primary" })
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Clientes.empresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nropedido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaventa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comentario)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clientes.empresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nropedido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaventa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comentario)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.idnropedido },
+            new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Detalles", "Details", new { id = item.idnropedido },
+            new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.idnropedido },
+            new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

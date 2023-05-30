@@ -1,0 +1,72 @@
+﻿@model Pymes_project.Models.Clientes
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar cliente</h2>
+<style>
+    dl {
+        background-color: white;
+        border-radius: 15px;
+    }
+</style>
+
+<h3>Seguro de quiere eliminar este cliente...?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ciudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ciudad)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            @Html.ActionLink("Volver", "Index", new { }, new { @class = "btn btn-success" })
+        </div>
+
+    }
+</div>

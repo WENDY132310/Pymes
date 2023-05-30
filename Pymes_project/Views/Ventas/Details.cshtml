@@ -1,0 +1,57 @@
+﻿@model Pymes_project.Models.Venta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles de venta</h2>
+<style>
+    .dl-horizontal {
+        background-color: white;
+        border-radius: 15px;
+    }
+</style>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Clientes.empresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clientes.empresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nropedido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nropedido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaventa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaventa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comentario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comentario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idnropedido },
+    new { @class = "btn btn-success" }) |
+    @Html.ActionLink("Volver", "Index", new { }, new { @class = "btn btn-info" })
+
+</p>

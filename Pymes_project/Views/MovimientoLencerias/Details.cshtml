@@ -1,0 +1,57 @@
+﻿@model Pymes_project.Models.MovimientoLenceria
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles registro</h2>
+<style>
+    .dl-horizontal {
+        background-color: white;
+        border-radius: 15px;
+    }
+</style>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InventarioLenceria.nombreproducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InventarioLenceria.nombreproducto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idnropedido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idnropedido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cantidadvendida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cantidadvendida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valorventa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valorventa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idventa },
+    new { @class = "btn btn-success" }) |
+    @Html.ActionLink("Volver", "Index", new { }, new { @class = "btn btn-info" })
+
+</p>

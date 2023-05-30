@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+       
+        .nav {
+            background-color: black;
+            color: #000000;
+            
+        }
+        .navbar {
+            background-color: black;
+            color: #000000;
+        }
+
+        body {
+            background-color: #92E0FB;
+            color: #000000;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                desplegables <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Clientes", "Index", "Clientes")</li>
+                                <li>@Html.ActionLink("Empleados", "Index", "Empleados")</li>
+                                <li>@Html.ActionLink("Compras", "Index", "Compras")</li>
+                                <li>
+                                    @Html.ActionLink("Inventario ", "Index", "InventarioLencerias")
+                                </li>
+                                <li>@Html.ActionLink("ventas", "Index", "Ventas")</li>
+                                <li>@Html.ActionLink("Registros de venta", "Index", "MovimientoLencerias")</li>
+
+
+                            </ul>
+                        </li>
+                        <li>@Html.ActionLink("Pedidos", "NuevoPedido", "Venta")</li>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Informes <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    @Html.ActionLink("Reporte Clientes", "ReporteClientes","Reportes")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Gráfica Productos", "Grafica","Graficas")
+                        </li>
+                    </ul>
+                    </li>
+                    <li>@Html.ActionLink("Usuarios", "Index", "Usuarios")</li>
+
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+
+                </div>
+            </div>
+        </div>
+    </div>
+           
+                @RenderBody()
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+                </footer>
+           
+
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)
+</body>
+</html>

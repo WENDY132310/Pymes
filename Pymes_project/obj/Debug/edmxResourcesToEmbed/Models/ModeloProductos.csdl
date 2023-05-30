@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BD_PymesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="InventarioLenceria">
+    <Key>
+      <PropertyRef Name="idcodigo" />
+    </Key>
+    <Property Name="idcodigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreproducto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="valorunitario" Type="Int32" Nullable="false" />
+    <Property Name="codigo" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="BD_PymesEntitiesProductos" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="InventarioLencerias" EntityType="Self.InventarioLenceria" />
+  </EntityContainer>
+</Schema>

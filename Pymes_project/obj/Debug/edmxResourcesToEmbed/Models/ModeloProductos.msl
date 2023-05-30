@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BD_PymesModelStoreContainer" CdmEntityContainer="BD_PymesEntitiesProductos">
+    <EntitySetMapping Name="InventarioLencerias">
+      <EntityTypeMapping TypeName="BD_PymesModel.InventarioLenceria">
+        <MappingFragment StoreEntitySet="InventarioLencerias">
+          <ScalarProperty Name="idcodigo" ColumnName="idcodigo" />
+          <ScalarProperty Name="nombreproducto" ColumnName="nombreproducto" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="valorunitario" ColumnName="valorunitario" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

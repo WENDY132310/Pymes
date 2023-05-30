@@ -1,0 +1,63 @@
+﻿@model Pymes_project.Models.Venta
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Borrar venta</h2>
+<style>
+    .dl-horizontal {
+        background-color: white;
+        border-radius: 15px;
+    }
+</style>
+<h3>Desea borrar este registro...?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Clientes.empresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clientes.empresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nropedido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nropedido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaventa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaventa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comentario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comentario)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            @Html.ActionLink("Volver", "Index", new { }, new { @class = "btn btn-success" })
+        </div>
+
+    }
+</div>

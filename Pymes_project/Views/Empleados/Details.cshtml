@@ -1,0 +1,58 @@
+﻿@model Pymes_project.Models.Empleados
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles registro</h2>
+<style>
+    .dl-horizontal {
+        background-color: white;
+        border-radius: 15px;
+    }
+</style>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.empleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ciudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ciudad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    >
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id },
+    new { @class = "btn btn-success" }) |
+    @Html.ActionLink("Volver", "Index", new { }, new { @class = "btn btn-info" })
+
+</p>

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Pymes_project.Models.Clientes>
+
+@{
+    ViewBag.Title = "ReporteClientes";
+}
+
+<h2>Reporte de Clientes</h2>
+<style>
+    .table{
+        background-color:white;
+        border-radius:15px;
+        
+    }
+
+    .conta {
+        background-color: white;
+        border-radius: 15px;
+    }
+</style>
+<table class="table">
+    <tr>
+    <tr>
+        <th>
+            NIT
+        </th>
+        <th>
+            EMPRESA
+        </th>
+        <th>
+            DIRECCION
+        </th>
+        <th>
+            TELEFONO
+        </th>
+        <th>
+            CIUDAD
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.empresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ciudad)
+            </td>
+        </tr>
+    }
+</table>
+<div class="conta" style="padding:10px;border:1px solid black">
+    <div>
+        <a href="@Url.Action("VistaReporteClientes", new { id = "pdf" })">
+            Reporte PDF
+        </a>
+    </div>
+    <div>
+        <a href="@Url.Action("VistaReporteClientes", new { id = "Excel" })">
+            Reporte EXCEL
+        </a>
+    </div>
+    <div>
+        <a href="@Url.Action("VistaReporteClientes", new { id = "Word" })">
+            Reporte WORD
+        </a>
+    </div>
+</div>
